@@ -1,0 +1,13 @@
+/* タブレット向け */
+@media all and (max-width: 1000px) {
+    .container {
+        width: 100%;
+    }
+}
+
+/* スマートフォン向け */
+@media all and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "zappa-worldillia",
+  "version": "1.0.0",
+  "description": "ZAPPA Worldillia Website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js --ext js,ejs,css --ignore node_modules/"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mysql2": "^3.9.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

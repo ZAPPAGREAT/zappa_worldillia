@@ -1,0 +1,11 @@
+UPDATE bgm_tracks SET file_path = 'audio/ざわめきと胸騒ぎ.mp3' WHERE title = 'ざわめきと胸騒ぎ';
+UPDATE bgm_tracks SET file_path = 'audio/Pop Step!.mp3' WHERE title = 'Pop Step!';
+UPDATE bgm_tracks SET file_path = 'audio/開幕ファンファーレ.mp3' WHERE title = '開幕ファンファーレ';
+UPDATE bgm_tracks SET file_path = 'audio/いきるいみ.mp3' WHERE title = 'いきるいみ';
+UPDATE bgm_tracks SET file_path = 'audio/妖精さんたちとの森のお茶会.mp3' WHERE title = '妖精さんたちとの森のお茶会';
+UPDATE bgm_tracks SET file_path = 'audio/おつきさまがみまもっている short.mp3' WHERE title = 'おつきさまがみまもっている';
+UPDATE bgm_tracks SET file_path = 'audio/Crazy Rabbit`s Laugh.mp3' WHERE title = 'Crazy Rabbit''s Laugh';
+UPDATE bgm_tracks SET file_path = 'audio/気ままな人.mp3' WHERE title = '気ままな人';
+UPDATE bgm_tracks SET file_path = 'audio/Lux de caelo.mp3' WHERE title = 'Lux De Caelo';
+UPDATE bgm_tracks SET file_path = 'audio/空虚.mp3' WHERE title = '空虚';
+UPDATE bgm_tracks SET file_path = 'audio/Day Dream Fantasy.mp3' WHERE title = 'Day Dream Fantasy'; 
