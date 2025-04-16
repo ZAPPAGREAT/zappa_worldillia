@@ -12,6 +12,10 @@ const staticOptions = {
 app.use('/css', express.static(path.join(__dirname, 'public/css'), staticOptions));
 app.use('/images', express.static(path.join(__dirname, 'public/images'), staticOptions));
 app.use('/audio', express.static(path.join(__dirname, 'public/audio'), staticOptions));
+app.use(express.static(path.join(__dirname, 'public'), {
+  index: false,
+  dotfiles: 'deny'
+}));
 
 // 不正なパスへのアクセスを防ぐ
 app.use('/', (req, res, next) => {
@@ -46,6 +50,10 @@ const connection = mysql.createConnection({
 // ルーティング設定
 // トップページ
 app.get('/', (req, res) => {
+  console.log("Z-top レンダリング");
+  if(error){
+    console.log(error);
+  }
   res.render('Z-top');
 });
 
@@ -97,4 +105,10 @@ connection.connect((err) => {
     return;
   }
   console.log('データベースに接続しました。');
+});
+
+app.use(express.static('public'));
+
+app.listen(3000, () => {
+  console.log('サーバー起動中 http://localhost:3000');
 });
