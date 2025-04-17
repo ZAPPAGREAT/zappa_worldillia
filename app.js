@@ -51,9 +51,6 @@ const connection = mysql.createConnection({
 // トップページ
 app.get('/', (req, res) => {
   console.log("Z-top レンダリング");
-  if(error){
-    console.log(error);
-  }
   res.render('Z-top');
 });
 
@@ -108,7 +105,3 @@ connection.connect((err) => {
 });
 
 app.use(express.static('public'));
-
-app.listen(3000, () => {
-  console.log('サーバー起動中 http://localhost:3000');
-});
