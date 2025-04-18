@@ -50,7 +50,6 @@ const connection = mysql.createConnection({
 // ルーティング設定
 // トップページ
 app.get('/', (req, res) => {
-  console.log("Z-top レンダリング");
   res.render('Z-top');
 });
 

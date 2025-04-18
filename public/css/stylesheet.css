@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+}
   
 body {
   font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
@@ -70,19 +70,19 @@ header {
 
 /* トップセクション */
 .top-wrapper {
-    padding: 100px 0 50px;
-    background-color: #fff;
+  padding: 100px 0 50px;
+  background-color: #fff;
 }
 
 .top-wrapper .container {
-    text-align: center;
-  }
+  text-align: center;
+}
 
-  .top-title {
-    display: block;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
+.top-title {
+  display: block;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
 
 .top-subtitle {
   display: block;
@@ -215,9 +215,12 @@ header {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  padding-top: 20px;
+  padding: 20px 50px 0;
 }
-  
+
+.profile-content p {
+  padding: 0 40px 0;
+}  
 
 .profile-content h3 {
   font-size: 24px;
@@ -239,6 +242,7 @@ header {
 .timeline-item {
   margin-bottom: 40px;
 }
+
 
 .history-section {
   background-color: white;
@@ -352,6 +356,7 @@ footer {
   font-size: 24px;
   color: #444;
   margin: 20px 0 5px;
+  float: center;
 }
 
 .request-content ul {
