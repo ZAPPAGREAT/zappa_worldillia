@@ -65,8 +65,16 @@ app.get('/works', (req, res) => {
 
 // BGMリストページ
 app.get('/free-bgm', (req, res) => {
-  res.render('Z-free-BGM-DL', { bgm_tracks: [] });
+  connection.query('SELECT * FROM bgm_tracks', (err, results) => {
+    if (err) {
+      console.error('BGMの取得に失敗しました:', err);
+      return res.status(500).send('BGMの取得に失敗しました');
+    }
+
+    res.render('Z-free-BGM-DL', { bgm_tracks: results });
+  });
 });
+
 
 // 依頼・お問い合わせページ
 app.get('/commission', (req, res) => {
@@ -91,16 +99,16 @@ app.use((err, req, res, next) => {
 
 // サーバーの起動
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-}); 
-
 connection.connect((err) => {
   if (err) {
     console.error('データベース接続エラー:', err);
     return;
   }
   console.log('データベースに接続しました。');
+
+  // ✅ DB接続が成功したらサーバーを起動
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
 });
 
-app.use(express.static('public'));
