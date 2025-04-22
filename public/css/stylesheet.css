@@ -112,6 +112,8 @@ padding: 50px 0;
 background-color: #fff;
 margin:0 80px 40px 80px;
 float: center;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .section-title {
@@ -175,6 +177,8 @@ background: #555;
 padding: 10px 0;
 margin:0 80px 40px 80px;
 background-color: #fff;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .schedule-wrapper .container {
@@ -198,6 +202,8 @@ color: #666;
 padding: 10px 0;
 background-color: #fff;
 margin:0 80px 40px 80px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .blog-wrapper .container {
@@ -219,6 +225,10 @@ text-align: center;
 width: 100px;
 height: auto;
 margin-bottom: 10px;
+}
+
+.blog-link p {
+  padding-bottom: 15px;
 }
 
 /* プロフィールセクション */
