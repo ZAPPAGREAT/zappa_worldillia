@@ -73,6 +73,7 @@ background-color: #f5f5f5;
 /* トップセクション */
 .top-wrapper {
   padding: 100px 0 50px;
+  margin-bottom: 40px;
   background-color: #fff;
 }
 
@@ -109,7 +110,8 @@ margin-bottom: 10px;
 .news-wrapper {
 padding: 50px 0;
 background-color: #fff;
-margin-top: 30px;
+margin:0 80px 40px 80px;
+float: center;
 }
 
 .section-title {
@@ -170,13 +172,15 @@ background: #555;
 
 /* スケジュールセクション */
 .schedule-wrapper {
-padding: 50px 0;
-background-color: #f5f5f5;
+padding: 10px 0;
+margin:0 80px 40px 80px;
+background-color: #fff;
 }
 
 .schedule-wrapper .container {
   text-align: center;
   flex-direction: column;
+  padding: 30px 20px 30px;
 }
 
 .schedule-notice {
@@ -185,10 +189,19 @@ font-size: 1.2em;
 color: #666;
 }
 
+.schedule-notice-link {
+  padding-top: 15px;
+}
+
 /* ブログセクション */
 .blog-wrapper {
-padding: 50px 0;
+padding: 10px 0;
 background-color: #fff;
+margin:0 80px 40px 80px;
+}
+
+.blog-wrapper .container {
+  flex-direction: column;
 }
 
 .blog-links {
@@ -732,6 +745,47 @@ margin-bottom: 10px;
 
 .download-btn:hover {
   background: #45a049;
+}
+
+.comment-section {
+  background-color: #fff;
+  max-width: 70%;
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+  margin: 0 auto 30px; /* ←ここがポイント */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.comment-section .container {
+  flex-direction: column;
+}
+
+.comment-section,
+.comment-list-section {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.comment-list li {
+  margin: 10px 60px 10px 60px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.comment-list-section,
+.comment-container {
+  flex-direction: column; 
+}
+
+.comment-container li{
+  list-style:none;
 }
 
 /* モーダルスタイル */

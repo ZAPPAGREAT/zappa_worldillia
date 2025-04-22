@@ -17,16 +17,6 @@ app.use(express.static(path.join(__dirname, 'public'), {
   dotfiles: 'deny'
 }));
 
-// 不正なパスへのアクセスを防ぐ
-app.use('/', (req, res, next) => {
-  if (req.path === '/') {
-    next();
-  } else if (req.path.match(/^\/(?:profile|works|free-bgm|commission|links)$/)) {
-    next();
-  } else {
-    res.redirect('/');
-  }
-});
 
 // EJSをテンプレートエンジンとして設定
 app.set('view engine', 'ejs');
@@ -65,16 +55,62 @@ app.get('/works', (req, res) => {
 
 // BGMリストページ
 app.get('/free-bgm', (req, res) => {
-  connection.query('SELECT * FROM bgm_tracks', (err, results) => {
+  // ① まず BGMリストを取得
+  connection.query('SELECT * FROM bgm_tracks', (err, bgmResults) => {
     if (err) {
       console.error('BGMの取得に失敗しました:', err);
       return res.status(500).send('BGMの取得に失敗しました');
     }
 
-    res.render('Z-free-BGM-DL', { bgm_tracks: results });
+    // ② 次にコメント一覧を取得
+    connection.query('SELECT * FROM comments ORDER BY created_at DESC', (err, commentResults) => {
+      if (err) {
+        console.error('コメントの取得に失敗しました:', err);
+        return res.status(500).send('コメントの取得に失敗しました');
+      }
+
+      // ③ 両方のデータをテンプレートに渡す
+      res.render('Z-free-BGM-DL', {
+        bgm_tracks: bgmResults,
+        comments: commentResults
+      });
+    });
   });
 });
 
+
+// コメント投稿処理
+app.post('/comments', express.urlencoded({ extended: true }), (req, res) => {
+  const { name, message } = req.body;
+  if (!name || !message) {
+    return res.status(400).send('名前とコメントを入力してください');
+  }
+
+  connection.query(
+    'INSERT INTO comments (name, message) VALUES (?, ?)',
+    [name, message],
+    (err) => {
+      if (err) {
+        console.error('コメント投稿エラー:', err);
+        return res.status(500).send('コメント投稿エラー');
+      }
+      // 🔁 投稿後はBGMページに戻す
+      res.redirect('/free-bgm');
+    }
+  );
+});
+
+
+// 不正なパスへのアクセスを防ぐ
+app.use('/', (req, res, next) => {
+  if (req.path === '/') {
+    next();
+  } else if (req.path.match(/^\/(?:profile|works|free-bgm|commission|links)$/)) {
+    next();
+  } else {
+    res.redirect('/');
+  }
+});
 
 // 依頼・お問い合わせページ
 app.get('/commission', (req, res) => {

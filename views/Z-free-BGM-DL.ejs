@@ -70,6 +70,43 @@
         </div>
       </div>
     </div>
+    <section class="comment-section">
+      <div class="container">
+        <h2>コメントはこちらから</h2>
+        <p>ダウンロードされた曲と使用用途などのご記入のご協力をよろしくお願いします！</p>
+        <p style="color: red; margin-bottom: 1em;">
+          ※ 公序良俗に反する書き込みや個人情報の投稿は禁止です。
+        </p>
+        
+        <form method="POST" action="/comments">
+          <div class="form-group">
+            <label>お名前</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="form-group">
+            <label>コメント</label>
+            <textarea name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">投稿する</button>
+        </form>
+      </div>
+    </section>
+    <section class="comment-list-section">
+      <div class="comment-container">
+        <h3>みなさんのコメント</h3>
+        <ul class="comment-list">
+          <% comments.forEach(comment => { %>
+            <li>
+              <strong><%= comment.name %></strong>: <%= comment.message %>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    
 
     <!-- 利用規約ポップアップ -->
     <div id="termsModal" class="modal">

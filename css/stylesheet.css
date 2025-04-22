@@ -685,6 +685,7 @@ margin-bottom: 10px;
 
 .main-content h1 {
   text-align: center;
+  margin-top: 30px;
   margin-bottom: 40px;
   font-size: 2em;
   color: #333;
@@ -732,6 +733,38 @@ margin-bottom: 10px;
 .download-btn:hover {
   background: #45a049;
 }
+
+.comment-section {
+  background-color: #fff;
+  max-width: 70%;
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+  margin: 0 auto 30px; /* ←ここがポイント */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.comment-section .container {
+  flex-direction: column;
+}
+
+.comment-section,
+.comment-list-section {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.comment-list li {
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+}
+
 
 /* モーダルスタイル */
 .modal {

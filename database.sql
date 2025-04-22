@@ -23,6 +23,16 @@ CREATE TABLE IF NOT EXISTS download_history (
     FOREIGN KEY (track_id) REFERENCES bgm_tracks(id)
 );
 
+-- コメント欄のテーブル
+CREATE TABLE comments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  message TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
 -- サンプルデータの挿入
 INSERT INTO bgm_tracks (title, genre, file_path, keywords) VALUES
 ('ざわめきと胸騒ぎ', 'ジャズ', 'audio/ざわめきと胸騒ぎ.mp3', 'ジャズ シリアス ミステリアス トレンディ スタイリッシュ かっこいい ピアノ'),
