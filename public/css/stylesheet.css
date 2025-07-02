@@ -187,14 +187,35 @@ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 30px 20px 30px;
 }
 
+.schedule-list {
+  padding: 15px;
+  font-size: 1.2em;
+}
+
 .schedule-notice {
 text-align: center;
-font-size: 1.2em;
 color: #666;
 }
 
-.schedule-notice-link {
-  padding-top: 15px;
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 15px;
+  background-color: #2de260;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 7px #1bb95a;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:active {
+  box-shadow: none;
+  transform: translateY(3px);
 }
 
 /* ブログセクション */
@@ -225,6 +246,7 @@ text-align: center;
 width: 100px;
 height: auto;
 margin-bottom: 10px;
+filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
 }
 
 .blog-link p {
